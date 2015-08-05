@@ -15,6 +15,7 @@
 		FAC29FA31B7103D7007E7B71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC29FA21B7103D7007E7B71 /* Images.xcassets */; };
 		FAC29FA61B7103D7007E7B71 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC29FA41B7103D7007E7B71 /* LaunchScreen.xib */; };
 		FAC29FB21B7103D7007E7B71 /* iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC29FB11B7103D7007E7B71 /* iosTests.swift */; };
+		FAFFE4451B72AAD30062BF35 /* bukeshuo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FAFFE4441B72AAAE0062BF35 /* bukeshuo.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		FAC29FAB1B7103D7007E7B71 /* iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC29FB01B7103D7007E7B71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAC29FB11B7103D7007E7B71 /* iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosTests.swift; sourceTree = "<group>"; };
+		FAFFE4441B72AAAE0062BF35 /* bukeshuo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bukeshuo.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				FAC29F991B7103D7007E7B71 /* AppDelegate.swift */,
 				FAC29F9B1B7103D7007E7B71 /* FirstViewController.swift */,
 				FA2A03141B7125F20033E276 /* bukeshuo.mp3 */,
+				FAFFE4441B72AAAE0062BF35 /* bukeshuo.mp4 */,
 				FAC29F9D1B7103D7007E7B71 /* SecondViewController.swift */,
 				FAC29F9F1B7103D7007E7B71 /* Main.storyboard */,
 				FAC29FA21B7103D7007E7B71 /* Images.xcassets */,
@@ -167,6 +170,11 @@
 				TargetAttributes = {
 					FAC29F931B7103D7007E7B71 = {
 						CreatedOnToolsVersion = 6.4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					FAC29FAA1B7103D7007E7B71 = {
 						CreatedOnToolsVersion = 6.4;
@@ -198,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAFFE4451B72AAD30062BF35 /* bukeshuo.mp4 in Resources */,
 				FA2A03151B7125F20033E276 /* bukeshuo.mp3 in Resources */,
 				FAC29FA11B7103D7007E7B71 /* Main.storyboard in Resources */,
 				FAC29FA61B7103D7007E7B71 /* LaunchScreen.xib in Resources */,

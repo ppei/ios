@@ -8,11 +8,13 @@
 
 import UIKit
 import AVFoundation
+import MediaPlayer
+
 
 class FirstViewController: UIViewController {
 
     var player: AVAudioPlayer = AVAudioPlayer()
-    
+    var moviePlayer: MPMoviePlayerController?
     
     @IBOutlet weak var playPause: UIButton!
     
@@ -53,10 +55,8 @@ class FirstViewController: UIViewController {
         sliderValue.value = Float(player.currentTime)/Float(player.duration)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
+    
+    func play_audio(){
         var Timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("updateSlider"), userInfo: nil, repeats: true)
         
         
@@ -74,6 +74,48 @@ class FirstViewController: UIViewController {
             
         }
         
+    }
+    
+    
+    func play_video(){
+        
+        if let
+            path = NSBundle.mainBundle().pathForResource("bukeshuo", ofType:"mp4"),
+            url = NSURL(fileURLWithPath: path),
+            moviePlayer = MPMoviePlayerController(contentURL: url) {
+                self.moviePlayer = moviePlayer
+                moviePlayer.view.frame = self.view.bounds
+                moviePlayer.prepareToPlay()
+                moviePlayer.scalingMode = .AspectFill
+                self.view.addSubview(moviePlayer.view)
+        } else {
+            debugPrintln("Ops, something wrong when playing video.m4v")
+        }
+    }
+    
+    func background_play_setup(){
+        var categoryError: NSError?
+        if AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: &categoryError) {
+            println("AVAudioSession Category Playback OK")
+            var activateError: NSError?
+            if AVAudioSession.sharedInstance().setActive(true, error: &activateError) {
+                println("AVAudioSession is Active")
+            } else if let activateError = activateError {
+                println(activateError.description)
+            }
+        } else if let categoryError = categoryError {
+            println(categoryError.description)
+        }
+
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        background_play_setup()
+        //play_audio()
+        play_video()
         
         
     }
